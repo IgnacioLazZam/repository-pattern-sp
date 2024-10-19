@@ -14,12 +14,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class TaskCreateViewModel @Inject constructor (
+class TaskDetailViewModel @Inject constructor (
     private val repository: DefaultTaskRepository
 ): ViewModel() {
 
-    suspend fun createTask(title:String = "", body:String = "" ){
-        repository.create(title, body);
+    suspend fun readTask(id:String = ""):Task{
+        val task = repository.readOne(id)
+        return task
     }
 
 }

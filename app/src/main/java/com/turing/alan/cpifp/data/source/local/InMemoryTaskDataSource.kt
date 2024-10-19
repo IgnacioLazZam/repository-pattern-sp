@@ -33,7 +33,7 @@ class InMemoryTaskDataSource @Inject constructor():LocalTaskDataSource {
     }
 
     override suspend fun readOne(id: String): LocalTask {
-        TODO("Not yet implemented")
+        return _tasks.single { it.id == id }
     }
 
     override suspend fun readAll(): List<LocalTask> {
