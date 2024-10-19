@@ -25,9 +25,6 @@ import javax.inject.Inject
 class TaskListFragment : Fragment() {
 
     private val viewModel:TaskListViewModel by viewModels()
-
-    @Inject
-    lateinit var repository:TaskRepository
     private lateinit var binding: FragmentTaskListBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
